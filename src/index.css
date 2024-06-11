@@ -15,14 +15,12 @@
   padding: 0;
   box-sizing: inherit;
 }
-
 body {
-  font-family: "Orbitron, sans-serif";
+  font-family: "Orbitron", sans-serif;
   width: 100vw;
   height: 100vh;
   background: var(--greyLight-1);
 }
-
 .App {
   margin: 0 auto;
   width: 80%;
@@ -58,7 +56,7 @@ body {
 /* Animation */
 .anim-typewriter {
   animation: typewriter 4s steps(44) 1s 1 normal both,
-    blinkTextCursoer 500ms steps(44) infinite normal;
+    blinkTextCursor 500ms steps(44) infinite normal;
 }
 @keyframes typewriter {
   from {
@@ -107,4 +105,155 @@ body {
 
 .screen-container:focus {
   outline: none;
+}
+
+.btn-wrapper {
+  width: 310px;
+  height: 370px;
+  border-radius: 25px;
+  padding: 20px;
+  margin-left: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    "long-btn long-btn . .";
+  gap: 0;
+  font-size: 25px;
+  text-align: center;
+  line-height: 2.5;
+}
+
+.long-btn {
+  cursor: pointer;
+  grid-area: long-btn;
+  width: 140px;
+  height: 60px;
+  background-color: #e5eaef;
+  border-radius: 15px;
+  color: #6e605e;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+  transition: 0.3s ease;
+}
+
+.btn {
+  cursor: pointer;
+
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+  transition: 0.3s ease;
+  width: 60px;
+  height: 60px;
+  background-color: #e5eaef;
+  border-radius: 25%;
+  color: #6e605e;
+}
+
+.btn:active,
+.long-btn:active {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+    inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+
+.red-btn {
+  color: #e5eaef;
+  background-color: #eb1d36;
+  box-shadow: inset 0.2rem 0.2rem 1rem #ec7272,
+    inset -0.2rem -0.2rem 1rem #c21010, 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+  transition: 0.3s ease;
+}
+
+.red-btn:active {
+  box-shadow: inset 0.5rem 0.2rem 1rem #c21010,
+    inset -0.2rem -0.2rem 1rem #ec7272;
+}
+
+.blue-btn {
+  color: #e5eaef;
+  background-color: #0096ff;
+  box-shadow: inset 0.2rem 0.2rem 1rem #7cb9e8,
+    inset -0.2rem -0.2rem 1rem #007fff, 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+  transition: 0.3s ease;
+}
+
+.blue-btn:active {
+  box-shadow: inset 0.5rem 0.2rem 1rem #007fff,
+    inset -0.2rem -0.2rem 1rem #7cb9e8;
+}
+
+.green-btn {
+  color: #e5eaef;
+  background-color: #1c6758;
+  border-radius: 50%;
+  box-shadow: inset 0.2rem 0.2rem 1rem #00ab66,
+    inset -0.2rem -0.2rem 1rem #1c6758, 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+  transition: 0.3s ease;
+}
+
+.green-btn:active {
+  box-shadow: inset 0.2rem 0.2rem 1rem #1c6456,
+    inset -0.2rem -0.2rem 1rem #00ab66;
+}
+
+.yellow-btn {
+  color: #e5eaef;
+  background-color: #ffc72c;
+  border-radius: 50%;
+  box-shadow: inset 0.2rem 0.2rem 1rem #f0e68c,
+    inset -0.2rem -0.2rem 1rem #febe10, 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+  transition: 0.3s ease;
+}
+
+.yellow-btn:active {
+  box-shadow: inset 0.2rem 0.2rem 1rem #febe10,
+    inset -0.2rem -0.2rem 1rem #f0e68c;
+}
+/* _____________________MEDIA QUERIES(MEDIUM DEVICES)___________________________ */
+@media screen and (max-width: 1350px) {
+  .title p {
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .App {
+    grid-template-columns: 50% 10%;
+    height: 100vh;
+    width: 100%;
+  }
+  .calculator {
+    background-color: transparent;
+    margin-top: 0;
+  }
+  .title {
+    margin-top: 2rem;
+  }
+  .title p {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    top: 50%;
+    right: 95%;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .title p {
+    display: none;
+  }
+}
+
+/* _____________________MEDIA QUERIES(SMALL DEVICES)___________________________ */
+@media screen and (max-width: 600px) {
+  .App {
+    width: 100%;
+  }
 }
