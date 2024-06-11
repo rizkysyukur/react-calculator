@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Antic+Slab&family=Orbitron:wght@500&display=swap");
+
+:root {
+  --white: #ffffff;
+  --greyLight-1: #e4ebf5;
+  --greyLight-2: #c8d0e7;
+  --greyLight-3: #bec8e4;
+  --greyDark: #9baacf;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Orbitron, sans-serif";
+  width: 100vw;
+  height: 100vh;
+  background: var(--greyLight-1);
+}
+
+.App {
+  margin: 0 auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 50% 45%;
+  background-color: #6d5dfc;
+}
+
+.title {
+  background-color: #00ab66;
+}
+.calculator {
+  background-color: #007fff;
+  margin-top: 5rem;
+  height: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line-1 {
+  position: relative;
+  top: 30%;
+  width: 24em;
+  margin: 0 auto;
+  font-size: 180%;
+  margin-left: 5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursoer 500ms steps(44) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 24em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.main-container {
+  width: 350px;
+  height: 650px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border-radius: 25px;
+  background: var(--greyLight-1);
+}
+
+.screen-container {
+  width: 310px;
+  height: 150px;
+  font-size: 45px;
+  border: none;
+  text-align: end;
+  border-radius: 10px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  margin: 20px;
+  font-family: "Antic Slab", serif;
+  padding-right: 20px;
+  box-sizing: border-box;
+  cursor: none;
+  margin-top: 70px;
+  padding-top: 75px;
+  background-color: #e5eaef;
+}
+
+.screen-container:focus {
+  outline: none;
+}
